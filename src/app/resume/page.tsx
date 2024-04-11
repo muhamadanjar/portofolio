@@ -93,7 +93,7 @@ export default function UniversalPage() {
                   <li
                     className="mt-1 leading-normal text-gray-500 transition duration-100 ease-in hover:text-gray-700 text-md"
                   >
-                    <a href="mailto:me@thomasleonhighbaugh.me" className="group">
+                    <a href="mailto:arvanria@gmail.com" className="group">
                       <span
                         className="mr-8 text-lg font-semibold text-gray-700 leading-snugish"
                       >

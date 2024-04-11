@@ -12,7 +12,26 @@ export default function UniversalPage() {
     skills: ["Research", "Analysis", "Critical Thinking", "Communication"]
   }];
 
-  let skills = [];
+  let experiences = [{
+    name: "Fullstack",
+    start: "Jun 2018",
+    end: "Present",
+    type: "Freelance",
+    items: [
+      {
+        description: "lorem ipsum "
+      },
+      {
+        description: "lorem ipsum "
+      },
+      {
+        description: "lorem ipsum "
+      }
+    ]
+  }]
+
+  let skills = ["HTML5", "CSS3", "Javascript", "Typescript", "React", "Python", "PostgreSQL", "Linux"];
+
   return (
     <>
      <section
@@ -149,8 +168,8 @@ export default function UniversalPage() {
                     EDUCATION
                 </h2>
 
-                {educations.map((item, idx) => {
-                  return (
+                {educations.map((item, idx) => 
+                  (
                     <div key={idx}>
                     <section key={idx} className="mt-2 border-b-2 break-inside-avoid">
                       <header>
@@ -178,7 +197,7 @@ export default function UniversalPage() {
                             >
                                 Minor:
                             </span>
-                            Economics
+                            {item.minor}
                         </li>
                         <li>
                             <span
@@ -201,7 +220,7 @@ export default function UniversalPage() {
                   
                   </div>
                   )
-                })}
+                )}
 
 
                </section>
@@ -217,32 +236,13 @@ export default function UniversalPage() {
                 <section className="mb-0 break-inside-avoid">
                   <section className="mt-1 last:pb-1">
                     <ul className="flex flex-wrap -mb-1 font-bold leading-relaxed text-md -mr-1.6">
-                      <li className="p-1.5 mb-1 leading-relaxed text-white bg-gray-800 mr-1.6 print:bg-white print:border-inset">
-                          HTML5
-                      </li>
-                      <li className="p-1.5 mb-1 leading-relaxed text-white bg-gray-800 mr-1.6 print:bg-white print:border-inset">
-                          CSS3
-                      </li>
-                      <li className="p-1.5 mb-1 leading-relaxed text-white bg-gray-800 mr-1.6 print:bg-white print:border-inset">
-                          JavaScript
-                      </li>
-                      <li className="p-1.5 mb-1 leading-relaxed text-white bg-gray-800 mr-1.6 print:bg-white print:border-inset">
-                          TypeScript
-                      </li>
-                      <li className="p-1.5 mb-1 leading-relaxed text-white bg-gray-800 mr-1.6 print:bg-white print:border-inset">
-                          React.js
-                      </li>
-                      <li className="p-1.5 mb-1 leading-relaxed text-white bg-gray-800 mr-1.6 print:bg-white print:border-inset">
-                          Python
-                      </li>
-                      <li className="p-1.5 mb-1 leading-relaxed text-white bg-gray-800 mr-1.6 print:bg-white print:border-inset">
-                          Postgresql
-                      </li>
-                      <li className="p-1.5 mb-1 leading-relaxed text-white bg-gray-800 mr-1.6 print:bg-white print:border-inset">
-                          Linux
-                      </li>
-                      <li className="p-1.5 mb-1 leading-relaxed text-white bg-gray-800 mr-1.6 print:bg-white print:border-inset">UI/UX</li>
-                      <li className="p-1.5 mb-1 leading-relaxed text-white bg-gray-800 mr-1.6 print:bg-white print:border-inset"> CI/CD </li>
+                      {skills.map((item, idx) => (
+                        <li  key={idx} className="p-1.5 mb-1 leading-relaxed text-white bg-gray-800 mr-1.6 print:bg-white print:border-inset">
+                          {item}
+                        </li>
+                        )
+                      )}
+                      
                     </ul>
                   </section>
                 </section>
@@ -255,14 +255,15 @@ export default function UniversalPage() {
                 <h2 className="mb-2 text-xl font-black tracking-widest text-gray-800 print:font-normal">
                     EXPERIENCE
                 </h2>
-                <>
-                <section className="mb-2 border-b-2 border-gray-300 break-inside-avoid">
+
+                {experiences.map((item, idx)=> (
+                  <section key={idx} className="mb-2 border-b-2 border-gray-300 break-inside-avoid">
                   <header>
                       <h3 className="font-semibold text-gray-800 text-md leading-snugish">
-                          Full Stack Web Developer
+                          {item.name}
                       </h3>
                       <p className="text-sm leading-normal text-gray-500">
-                          Jun 2018 &ndash; Present | Freelance
+                          {item.start} &ndash; {item.end} | {item.type}
                       </p>
                   </header>
                   <ul className="pl-3 mt-2 font-normal text-gray-700 text-md leading-snugish">
@@ -286,93 +287,8 @@ export default function UniversalPage() {
                     </li>
                   </ul>
                 </section>
-
-                <section className="mb-2 border-b-2 border-gray-300 break-inside-avoid">
-                  <header>
-                      <h3 className="font-semibold text-gray-800 text-md leading-snugish">
-                          Computer Repair Technician
-                      </h3>
-                      <p className="text-sm text-gray-500 leading-snugish">
-                          Mar 2018 &ndash; Present | Freelance
-                      </p>
-                  </header>
-                  <ul className="pl-3 mt-2 font-normal text-gray-700 text-md leading-snugish">
-                      <li>
-                          <span className="text-gray-500 transform -translate-y-px select-none">
-                              &rsaquo;
-                          </span>
-                          Provided expert computer repair services to individuals and businesses, diagnosing and resolving hardware and software issues effectively.
-                      </li>
-                      <li>
-                          <span className="text-gray-500 transform -translate-y-px select-none">
-                              &rsaquo;
-                          </span>
-                          Demonstrated proficiency across diverse operating systems (Windows, macOS, Linux) and hardware components, offering tailored solutions, including hardware upgrades, software installations, and malware removal.
-                      </li>
-                  </ul>
-                </section>
-              
-                <section className="mb-2 border-b-2 border-gray-300 break-inside-avoid">
-                    <header>
-                        <h3 className="font-semibold text-gray-800 text-md leading-snugish">
-                            Assistant Manager
-                        </h3>
-                        <p className="text-sm text-gray-500 leading-snugish">
-                            May 2012 &ndash; Apr 2018 | Pet Food Express
-                        </p>
-                    </header>
-                    <ul className="pl-3 mt-2 font-normal text-gray-700 text-md leading-snugish">
-                        <li>
-                            <span className="text-gray-500 transform -translate-y-px select-none">
-                                &rsaquo;
-                            </span>
-                            Trained and supervised staff in product knowledge, customer engagement, and sales techniques, ensuring a top-notch shopping experience for customers.
-                        </li>
-                        <li>
-                            <span className="text-gray-500 transform -translate-y-px select-none">
-                                &rsaquo;
-                            </span>
-                            Maintained a pristine and organized store environment, fostering maximum customer satisfaction.
-                        </li>
-                        <li>
-                            <span className="text-gray-500 transform -translate-y-px select-none">
-                                &rsaquo;
-                            </span>
-                            Demonstrated deep expertise in the pet food industry, including trends, products, and competitors, providing customers with informed recommendations and advice.
-                        </li>
-                    </ul>
-                </section>
-                <section className="mb-2 border-b-0 border-gray-300 break-inside-avoid">
-                    <header>
-                        <h3 className="font-semibold text-gray-800 text-md leading-snugish">
-                            Executive Assistant
-                        </h3>
-                        <p className="text-sm text-gray-500 leading-snugish">
-                            Jun 2009 &ndash; Dec 2011 | 360 Custom Closets and Cabinets
-                        </p>
-                    </header>
-                    <ul className="pl-3 mt-2 font-normal text-gray-700 text-md leading-snugish">
-                        <li>
-                            <span className="text-gray-500 transform -translate-y-px select-none">
-                                &rsaquo;
-                            </span>
-                            Provided high-level administrative support to the small business executive, managing schedules, travel arrangements, and coordinating meetings and events.
-                        </li>
-                        <li>
-                            <span className="text-gray-500 transform -translate-y-px select-none">
-                                &rsaquo;
-                            </span>
-                            Managed communication on behalf of the executive, including answering phone calls and emails, ensuring timely and professional responses to inquiries and requests.
-                        </li>
-                        <li>
-                            <span className="text-gray-500 transform -translate-y-px select-none">
-                                &rsaquo;
-                            </span>
-                            Maintained relationships with vendors, clients, and external stakeholders, ensuring professionalism and alignment with the business's values.
-                        </li>
-                    </ul>
-                </section>
-                </>
+                ))}
+                
 
               </section>
             </section>
